@@ -1,0 +1,199 @@
+@import "../../../../styles/variables";
+
+.adverts-details-page-container {
+  padding: 40px;
+  position: relative;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    margin: 0;
+  }
+
+  .advert-detail-page-header {
+    background-image: linear-gradient(
+      90deg,
+      rgb(243, 220, 242),
+      rgb(225, 156, 213)
+    );
+    padding: 40px 0;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: 40px;
+
+    .advert-detail-header-left {
+      h2 {
+        font-size: 26px;
+        margin-bottom: 10px;
+      }
+
+      .all-attributes-container {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        .single-item {
+          display: flex;
+          align-items: center;
+          gap: 5px;
+
+          .item-icon {
+            color: rgb(231, 166, 1);
+            width: 20px;
+            height: auto;
+          }
+        }
+      }
+    }
+
+    .advert-detail-header-right {
+      h1 {
+        font-size: 38px;
+      }
+    }
+  }
+
+  .advert-detail-page-main {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    .advert-detail-page-main-left {
+      width: 65%;
+      .image-schowcase-container {
+        padding: 20px;
+        background-color: rgb(234, 234, 234);
+        border: 1px solid rgb(205, 205, 205);
+        border-radius: 20px;
+        .main-image {
+          width: 100%;
+          height: 440px;
+          object-fit: cover;
+          border-radius: 30px;
+        }
+        .images-container {
+          margin-top: 30px;
+          display: flex;
+          gap: 20px;
+          overflow-x: auto;
+          padding: 10px;
+
+          img {
+            width: 170px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 1px solid rgb(180, 180, 180);
+            cursor: pointer;
+            &:hover {
+              box-shadow: 0px 0px 5px 5px rgb(136, 136, 136);
+            }
+          }
+        }
+      }
+
+      .description-container {
+        h5 {
+          margin-bottom: 10px;
+        }
+        margin-top: 30px;
+        padding: 20px;
+        background-color: rgb(234, 234, 234);
+        border: 1px solid rgb(205, 205, 205);
+        border-radius: 20px;
+      }
+
+      .details-container {
+        margin-top: 30px;
+        padding: 20px;
+        background-color: rgb(234, 234, 234);
+        border: 1px solid rgb(205, 205, 205);
+        border-radius: 20px;
+        .side-by-side-main {
+          margin-top: 30px;
+          display: flex;
+          width: 90%;
+          align-items: center;
+          justify-content: space-between;
+
+          .single-detail-item {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+          }
+
+          .details-left-container {
+            width: 40%;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+          }
+
+          .details-right-container {
+            width: 40%;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+          }
+        }
+      }
+
+      .location-details-container {
+        margin-top: 30px;
+        padding: 20px;
+        background-color: rgb(234, 234, 234);
+        border: 1px solid rgb(205, 205, 205);
+        border-radius: 20px;
+        .location-details {
+          margin-top: 20px;
+          display: flex;
+          gap: 10%;
+          align-items: center;
+        }
+      }
+    }
+    .advert-detail-page-main-right {
+      width: 30%;
+      .schedule-form-container {
+        padding: 20px;
+        background-color: rgb(234, 234, 234);
+        border: 1px solid rgb(205, 205, 205);
+        border-radius: 20px;
+
+        form {
+          margin-top: 30px;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          input {
+            height: 40px;
+            border-radius: 5px;
+            width: 100%;
+            border: 1px solid rgb(233, 233, 233);
+            padding-inline: 10px;
+          }
+          button {
+            height: 40px;
+            border-radius: 5px;
+            width: 100%;
+            border: 2px solid transparent;
+            background-color: $color4;
+            color: white;
+            transition: all 0.3s;
+
+            &:hover {
+              border: 2px solid $color4;
+              background-color: transparent;
+              color: $color4;
+            }
+          }
+        }
+      }
+    }
+  }
+}

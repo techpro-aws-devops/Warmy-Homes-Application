@@ -1,0 +1,46 @@
+version: '3'
+services:
+  ui:
+    image: frontend:latest
+    container_name: frontend
+    depends_on:
+      - app
+      - db
+    env_file:
+      - ./Frontend-WarmyHomes/.env
+    ports:
+      - "3000:3000"
+    networks:
+      - warmy-net
+  app:
+    image: backend:latest
+    container_name: backend
+    depends_on:
+      - db
+    ports:
+      - "8080:8080"
+    restart: always
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/warmy_homes_db
+      SPRING_DATASOURCE_USERNAME: dev_user
+      SPRING_DATASOURCE_PASSWORD: password
+    networks:
+      - warmy-net       
+  db:
+    image: postgres:latest
+    container_name: postgres
+    environment:
+      POSTGRES_USER: dev_user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: warmy_homes_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - db-data:/var/lib/postgresql/data/
+    networks:
+      - warmy-net
+volumes:
+    db-data:
+networks:
+    warmy-net:
+        driver: bridge
