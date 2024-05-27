@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert -f docker-compose.yml
+    kompose.service.expose: devopsandcloudsolutionskorayayakin.org
+    kompose.service.nodeport.port: "30001"
+    kompose.service.type: nodeport
+    kompose.version: 1.33.0 (3ce457399)
+  labels:
+    io.kompose.service: ui
+  name: ui
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: ui
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert -f docker-compose.yml
+        kompose.service.expose: devopsandcloudsolutionskorayayakin.org
+        kompose.service.nodeport.port: "30001"
+        kompose.service.type: nodeport
+        kompose.version: 1.33.0 (3ce457399)
+      labels:
+        io.kompose.network/warmy-homes-turkey-warmy-net: "true"
+        io.kompose.service: ui
+    spec:
+      containers:
+        - env:
+            - name: NEXTAUTH_SECRET
+              valueFrom:
+                configMapKeyRef:
+                  key: NEXTAUTH_SECRET
+                  name: ui-env
+          image: korayayakin/warmyfrontend1
+          name: frontend
+          ports:
+            - containerPort: 3000
+              hostPort: 3000
+              protocol: TCP
+      restartPolicy: Always

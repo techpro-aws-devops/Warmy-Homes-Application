@@ -1,11 +1,15 @@
 version: '3'
 services:
   ui:
-    image: frontend:latest
+    image: korayayakin/warmyfrontend1
     container_name: frontend
     depends_on:
       - app
       - db
+    labels:
+      kompose.service.expose: "devopsandcloudsolutionskorayayakin.org"
+      kompose.service.type: "nodeport"   
+      kompose.service.nodeport.port: "30001"  
     env_file:
       - ./Frontend-WarmyHomes/.env
     ports:
@@ -13,7 +17,7 @@ services:
     networks:
       - warmy-net
   app:
-    image: backend:latest
+    image: korayayakin/backend1
     container_name: backend
     depends_on:
       - db
@@ -27,7 +31,7 @@ services:
     networks:
       - warmy-net       
   db:
-    image: postgres:latest
+    image: postgres:13
     container_name: postgres
     environment:
       POSTGRES_USER: dev_user
@@ -35,12 +39,10 @@ services:
       POSTGRES_DB: warmy_homes_db
     ports:
       - "5432:5432"
-    volumes:
-      - db-data:/var/lib/postgresql/data/
+
     networks:
       - warmy-net
-volumes:
-    db-data:
+
 networks:
     warmy-net:
         driver: bridge

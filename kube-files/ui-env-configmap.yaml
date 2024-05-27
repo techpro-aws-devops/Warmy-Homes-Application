@@ -1,0 +1,8 @@
+apiVersion: v1
+data:
+  NEXTAUTH_SECRET: 9/VTxMlbtnZpYTrk83G6Z7kNFGMHsBZAEzUYsAg+9tc=
+kind: ConfigMap
+metadata:
+  labels:
+    io.kompose.service: ui-ui-env
+  name: ui-env
