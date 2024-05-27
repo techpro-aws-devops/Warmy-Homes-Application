@@ -34,7 +34,7 @@ spec:
                 configMapKeyRef:
                   key: NEXTAUTH_SECRET
                   name: ui-env
-          image: korayayakin/warmyfrontend1
+          image: korayayakin/frontend2
           name: frontend
           ports:
             - containerPort: 3000

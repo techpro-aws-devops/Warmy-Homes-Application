@@ -11,8 +11,9 @@ metadata:
     io.kompose.service: ui
   name: ui
 spec:
+  ingressClassName: nginx
   rules:
-    - host: devopsandcloudsolutionskorayayakin.org
+    - host: warmy.devopsandcloudsolutionskorayayakin.org
       http:
         paths:
           - backend:
