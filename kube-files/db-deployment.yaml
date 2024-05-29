@@ -29,7 +29,7 @@ spec:
               value: password
             - name: POSTGRES_USER
               value: dev_user
-          image: postgres:13
+          image: postgres
           name: postgres
           ports:
             - containerPort: 5432
