@@ -36,7 +36,7 @@ spec:
                   name: ui-env
             - name: BASE_URL
               value: http://warmy.samdevops.link:8080/
-          image: frontend
+          image: techproawsdevopsteam/warmyfrontend
           name: frontend
           ports:
             - containerPort: 3000
