@@ -35,7 +35,7 @@ spec:
                   key: NEXTAUTH_SECRET
                   name: ui-env
             - name: BASE_URL
-              value: http://warmy.samdevops.link:8080/
+              value: http://warmy.samdevops.link:8080
           image: techproawsdevopsteam/warmyfrontend
           name: frontend
           ports:
