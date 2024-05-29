@@ -23,7 +23,7 @@ export const config = {
   },
 
   api: {
-     baseUrl: "http://warmy.devopsandcloudsolutionskorayayakin.org:8080",
+     baseUrl: process.env.BASE_URL,
     
     },
      
