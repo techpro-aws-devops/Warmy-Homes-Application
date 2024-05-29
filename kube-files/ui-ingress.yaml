@@ -13,7 +13,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - host: warmy.devopsandcloudsolutionskorayayakin.org
+    - host: warmy.samdevops.link
       http:
         paths:
           - backend:
