@@ -12,6 +12,8 @@ services:
       kompose.service.nodeport.port: "30001"  
     env_file:
       - ./Frontend-WarmyHomes/.env
+    environment:
+      BASE_URL: http://makine_public_ip:8080
     ports:
       - "3000:3000"
     networks:
