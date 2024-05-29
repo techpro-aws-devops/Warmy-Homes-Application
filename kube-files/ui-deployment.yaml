@@ -34,6 +34,8 @@ spec:
                 configMapKeyRef:
                   key: NEXTAUTH_SECRET
                   name: ui-env
+            - name: BASE_URL
+              value: http://warmy.samdevops.link:8080
           image: korayayakin/frontend2
           name: frontend
           ports:
